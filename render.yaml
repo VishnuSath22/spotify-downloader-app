@@ -1,8 +1,6 @@
 services:
   - type: web
-    name: spotify-downloader-app
+    name: spotify-downloader
     env: python
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "python app.py"
-    build:
-      dockerfile: Dockerfile
+    startCommand: "gunicorn app:app"
