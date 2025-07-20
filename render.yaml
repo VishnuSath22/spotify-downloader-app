@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: spotify-downloader
+    name: spotify-downloader-app
     env: python
-    buildCommand: "pip install -r requirements.txt"
-    startCommand: "gunicorn app:app"
+    buildCommand: ./build.sh
+    startCommand: bash -c "source venv/bin/activate && gunicorn app:app"
